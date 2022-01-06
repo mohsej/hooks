@@ -1,16 +1,13 @@
-
 import React from "react"
-import {Container,Navbar,Form,Button} from 'react-bootstrap';
+import {Navbar,Form,Button} from 'react-bootstrap';
 import ReactStars from "react-rating-stars-component";
 
 function MainNavbar({search,handleSearch,rating,handleRating,handleModal}) {
     return (
         <div className="Nav">
              <Navbar bg="dark" variant="dark">
-      
-      Movies liste 
+     
       <Button className="button" onClick={handleModal}>AddMovies</Button>
-      
         <Form className="d-flex"
         >
         <input 
@@ -21,7 +18,7 @@ function MainNavbar({search,handleSearch,rating,handleRating,handleModal}) {
           value={search}
           onChange={handleSearch}
         />
-        <Button className="butt" variant="outline-success">Search</Button> 
+        <Button className="buts" variant="outline-success">Search</Button> 
          
        <div className="star"> <ReactStars 
          count={5}

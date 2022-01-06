@@ -1,27 +1,25 @@
-import { useEffect, useState } from "react";
-
 import Filter from "./Filter";
+import { useState, useEffect } from "react";
 
 const MovieCard = ({ movies, search, rating }) => {
   const [filtermovies, setfilterMovies] = useState(movies);
   useEffect(() => {
-    if (search.langth !== 0 || rating !== 0) {
+    if (search.length !== 0 || rating !== 0) {
       setfilterMovies(
-        filtermovies.filter((movie) => {
+        movies.filter((Filter) => {
           return (
-            movie.name.toLowerCase().includes(search.toLowerCase()) ||
-            movie.rating >= rating
+            Filter.name.toLowerCase().includes(search.toLowerCase()) &&
+            Filter.rating >= rating
           );
         })
       );
     } else {
       setfilterMovies(movies);
     }
-  }, [search]);
-
+  }, [search, rating, movies]);
   return (
     <div>
-      <Filter movies={movies} />
+      <Filter movies={filtermovies} />
     </div>
   );
 };

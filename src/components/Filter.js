@@ -1,19 +1,17 @@
 import ReactStars from "react-rating-stars-component";
-import React from "react";
-
+import "./Filter.css";
 const Filter = ({ movies }) => {
   return (
-    <div>
-      {movies.map((movie) => {
-        console.log(movie);
+    <div className="acc">
+      {movies.map((Filter) => {
         return (
-          <div key={movie.id}>
-            <img src={movie.img} />
-            <h4>{movie.name}</h4>
-            <div>
+          <div className="acc" key={Filter.id}>
+            <img className="img" src={Filter.img} />
+            <h4 className="name">{Filter.name}</h4>
+            <div className="rate">
               <ReactStars
                 count={5}
-                value={movie.rating}
+                value={Filter.rating}
                 size={24}
                 isHalf={false}
                 edit={false}
